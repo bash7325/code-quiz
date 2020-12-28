@@ -1,0 +1,27 @@
+body {
+    background-image: url(assets/code-bkgrd.jpg);
+}
+
+h1 {
+    text-align: center;
+    font-family: fantasy;
+    color: greenyellow;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+h4 {
+    text-align: center;
+    color: greenyellow;
+    padding-bottom: 40px;
+}
+
+nav {
+    opacity: .50;
+}
+
+#start-button {
+    margin: 0 auto;
+    width: 125px;
+}
+    
