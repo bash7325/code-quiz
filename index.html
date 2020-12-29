@@ -18,24 +18,33 @@
     />
   </head>
   <body>
+    <!--Navbar with high score and timer-->
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">High Scores</a>
+        <a class="navbar-brand" href="#">High Score</a>
+        <span id="timer" class="navbar-brand mb-0 h1">Timer</span>
       </div>
     </nav>
-
+    <!--Instructions-->
     <h1>Brandon's Coding Quiz</h1>
 
     <h4>Think you have what it takes to get the high score?</h4>
+    <h4>
+      You have only 60 seconds so be quick, wrong answers deducts 15 seconds.
+    </h4>
     <h4>Click start to test your knowledge!</h4>
-
-    <section>
-      <div id="start-button">
-        <button type="button" class="btn btn-primary btn-lg">
-          START
-        </button>
+    <!--Container for quiz-->
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div id="startButton">
+            <button type="button" class="btn btn-primary btn-lg">START</button>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div id="quizContainer"></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -54,5 +63,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
