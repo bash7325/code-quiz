@@ -22,5 +22,7 @@ nav {
     opacity: .50;
 }
 
-
+#answers {
+    visibility: hidden;
+}
     
