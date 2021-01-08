@@ -13,16 +13,16 @@ var btn4 = document.getElementById("btn-4");
 var answerDisplay = document.getElementById("answers-display");
 var endQuizScreen = document.getElementById("quiz-end-title");
 var submitScore = document.getElementById("submit-initials");
-var highscoresDisplay = document.getElementById("highscores");
-var leaderboardInitials = document.getElementById("initials-div");
-var leaderboardScore = document.getElementById("score-div");
+var highScoresDisplay = document.getElementById("highscores");
+var leaderBoardInitials = document.getElementById("initials-div");
+var leaderBoardScore = document.getElementById("score-div");
 
 var returnToQuiz = document.getElementById("return-quiz");
-var highscoresLink = document.getElementById("score-leaderboard");
+var highScoresLink = document.getElementById("score-leaderboard");
 var timerEl = document.getElementById("time-spent");
-var startTime = 75;
+var startTime = 3;
 
-var highscores = [];
+var highScores = [];
 var scoreNames = [];
 
 // Timer - starts at 75 sec and countdown to 0
@@ -37,17 +37,17 @@ function timerCountdown() {
             return;
         }
     }, 1000);
-}
+};
 //changes timer to read time is up
 function sendMessage() {
     timerEl.textContent = "Time is up!";
-}
+};
 //starts quiz
 function launchQuiz() {
     quizLaunch.classList.add("hide");
     questionContainer.classList.remove("hide");  
     showQuestion();    
-} 
+} ;
 //cycle through questions, if reaches end display score
 var qIndex = 0;
 
@@ -55,9 +55,10 @@ function showQuestion() {
     if (qIndex === questions.length | startTime === 0) {
         endQuizScreen.classList.remove("hide");
         questionContainer.classList.add("hide");
+        document.getElementById("correct-incorrect").classList.add("hide");
         var score = startTime;
-        alert("Your score is " + score);
-        highscores.push(score);
+        alert("Quiz over! Your score is " + score);
+        highScores.push(score);
         
     } else {
         questionEl.innerText = questions[qIndex].title;
@@ -66,18 +67,18 @@ function showQuestion() {
         btn3.innerHTML = questions[qIndex].choices[2];
         btn4.innerHTML = questions[qIndex].choices[3];
     }
-}
+};
 
 function selectAnswer() {
 
     if (event.target.textContent === questions[qIndex].answer) {
-        alert("That's correct!");
+        document.getElementById("correct-incorrect").innerHTML = "CORRECT!";
     }  else {
-        alert("That's incorrect!");
+        document.getElementById("correct-incorrect").innerHTML = "WRONG!"
         startTime = startTime - 10;
     } 
 
-}
+};
 
 buttonStart.addEventListener("click", function() {
     timerCountdown();
@@ -91,44 +92,45 @@ buttonChoices.addEventListener("click", function() {
 
 });
 
+//high scores
 submitScore.addEventListener("click", function() {
-    alert("Your initials have been submitted!");
+    alert("Your score has been submitted");
     var scoreInitials = document.getElementById("enter-initials").value;
 
     var playerScore = {
         initials: [scoreInitials],
-        score: [highscores]
-    }
+        score: [highScores]
+    };
 
     console.log(playerScore);
 
     function populateStorage () {
         localStorage.setItem("player score", JSON.stringify(playerScore));
         localStorage.setItem("initials", JSON.stringify(scoreInitials));
-    }
+    };
     populateStorage(playerScore);
     
-})
+});
 
-//click high scores, hide question container
-highscoresLink.addEventListener("click", function() {
+//click high scores, hide question container toggle return to quiz
+highScoresLink.addEventListener("click", function() {
 
-    highscoresDisplay.classList.toggle("hide");
+    highScoresDisplay.classList.toggle("hide");
     quizLaunch.classList.add("hide");
     endQuizScreen.classList.add("hide");
-    highscoresLink.classList.toggle("hide");
+    highScoresLink.classList.toggle("hide");
     returnToQuiz.classList.toggle("hide");
 
     var scoreList = JSON.parse(localStorage.getItem("playerScore"));
     
-    leaderboardInitials.append.textContent = scoreList.initials;
-    leaderboardScore.append.textContent = scoreList.highscore;
+    leaderBoardInitials.append.textContent = scoreList.initials;
+    leaderBoardScore.append.textContent = scoreList.score;
 
-})
-
+});
+//return to quiz
 returnToQuiz.addEventListener("click", function () {
-    highscoresLink.classList.toggle("hide");
+    highScoresLink.classList.toggle("hide");
     returnToQuiz.classList.toggle("hide");
     quizLaunch.classList.toggle("hide");
-    highscoresDisplay.classList.toggle("hide");
-})
+    highScoresDisplay.classList.toggle("hide");
+});
