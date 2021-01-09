@@ -21,13 +21,14 @@ var returnToQuiz = document.getElementById("return-quiz");
 var highScoresLink = document.getElementById("score-leaderboard");
 var clear = document.getElementById("clear-btn");
 var timerEl = document.getElementById("time-spent");
-var startTime = 76;
+var startTime ;
 
 var highScores = [];
 var scoreNames = [];
 
 // Timer - starts at 75 sec and countdown to 0
 function timerCountdown() {
+  startTime = 2
   var timerInterval = setInterval(function () {
     startTime--;
     timerEl.textContent = startTime + " seconds remaining";
@@ -44,6 +45,7 @@ function sendMessage() {
   timerEl.textContent = "Time is up!";
   if (startTime <= 0) {
   alert("Time is Up!");
+  showQuestion();
   }
 }
 //starts quiz
@@ -92,7 +94,7 @@ buttonChoices.addEventListener("click", function () {
   showQuestion();
 });
 
-//high scores, this is not working need to fix
+//high scores
 submitScore.addEventListener("click", function () {
   alert("Your score has been submitted");
   var scoreInitials = document.getElementById("enter-initials").value;
