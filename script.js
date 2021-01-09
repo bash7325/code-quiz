@@ -19,6 +19,7 @@ var leaderBoardScore = document.getElementById("score-div");
 
 var returnToQuiz = document.getElementById("return-quiz");
 var highScoresLink = document.getElementById("score-leaderboard");
+var clear = document.getElementById("clear-btn");
 var timerEl = document.getElementById("time-spent");
 var startTime = 76;
 
@@ -104,7 +105,7 @@ submitScore.addEventListener("click", function () {
   function populateStorage() {
     localStorage.setItem("playerScore", JSON.stringify(playerScore));
     localStorage.setItem("initials", JSON.stringify(scoreInitials));
-  }
+  };
   populateStorage(playerScore);
 });
 
@@ -121,6 +122,13 @@ highScoresLink.addEventListener("click", function () {
   document.getElementById("initials-div").textContent = scoreList.initials;
   document.getElementById("score-div").textContent = scoreList.score;
 });
+  //clear scores button
+clear.addEventListener("click", clearScores);
+function clearScores() {
+  localStorage.clear();
+  document.getElementById("initials-div").textContent = "";
+  document.getElementById("score-div").textContent = "";
+};
 //return to quiz
 returnToQuiz.addEventListener("click", function () {
   highScoresLink.classList.toggle("hide");
@@ -128,3 +136,4 @@ returnToQuiz.addEventListener("click", function () {
   quizLaunch.classList.toggle("hide");
   highScoresDisplay.classList.toggle("hide");
 });
+
