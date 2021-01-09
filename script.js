@@ -42,7 +42,9 @@ function timerCountdown() {
 //changes timer to read time is up, alerts user
 function sendMessage() {
   timerEl.textContent = "Time is up!";
+  if (startTime <= 0) {
   alert("Time is Up!");
+  }
 }
 //starts quiz
 function launchQuiz() {
@@ -105,7 +107,7 @@ submitScore.addEventListener("click", function () {
   function populateStorage() {
     localStorage.setItem("playerScore", JSON.stringify(playerScore));
     localStorage.setItem("initials", JSON.stringify(scoreInitials));
-  };
+  }
   populateStorage(playerScore);
 });
 
@@ -128,7 +130,7 @@ function clearScores() {
   localStorage.clear();
   document.getElementById("initials-div").textContent = "";
   document.getElementById("score-div").textContent = "";
-};
+}
 //return to quiz
 returnToQuiz.addEventListener("click", function () {
   highScoresLink.classList.toggle("hide");
