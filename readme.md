@@ -17,6 +17,9 @@ Created a timed JavaScript quiz to test myself and others on the fundamentals.
 - [Grasshopper](grasshopper.app)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+# Deployed project
+
+- [Code quiz](https://bash7325.github.io/code-quiz/)
 
 # Screenshots
 
