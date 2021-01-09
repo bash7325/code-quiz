@@ -28,7 +28,7 @@ var scoreNames = [];
 
 // Timer - starts at 75 sec and countdown to 0
 function timerCountdown() {
-  startTime = 2
+  startTime = 76
   var timerInterval = setInterval(function () {
     startTime--;
     timerEl.textContent = startTime + " seconds remaining";
