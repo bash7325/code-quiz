@@ -20,8 +20,8 @@ Created a timed JavaScript quiz to test myself and others on the fundamentals.
 
 # Screenshots
 
-- [Home](https://i.imgur.com/cosjC8H.png)
-- [Q's](https://i.imgur.com/GOfRmMX.png)
-- [Quiz over](https://i.imgur.com/pAssoK6.png)
-- [Initials](https://i.imgur.com/ieLagl9.png)
-- [High Score](https://i.imgur.com/KDotQ3N.png)
+- ![Home](https://i.imgur.com/cosjC8H.png)
+- ![Q's](https://i.imgur.com/GOfRmMX.png)
+- ![Quiz over](https://i.imgur.com/pAssoK6.png)
+- ![Initials](https://i.imgur.com/ieLagl9.png)
+- ![High Score](https://i.imgur.com/KDotQ3N.png)
